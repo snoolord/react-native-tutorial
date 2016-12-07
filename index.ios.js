@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
+import SearchPage from './SearchPage';
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -17,7 +17,7 @@ import {
 class HelloWorld extends Component {
   render() {
     return (
-        <Text style={styles.welcome}>
+        <Text style={styles.text}>
           Hello World
           Hello helo
         </Text>
@@ -28,30 +28,24 @@ export default class AwesomeProject extends Component {
   render() {
     return (
       <NavigatorIOS
+        style={styles.container}
         initialRoute={{
           title: 'Property Finder',
-          component: HelloWorld,
+          component: SearchPage,
         }}/>
     );
   }
 }
 const styles = StyleSheet.create({
+  text: {
+    color: 'black',
+    backgroundColor: 'white',
+    fontSize: 30,
+    margin: 80
+  },
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    flex: 1
+  }
 });
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
